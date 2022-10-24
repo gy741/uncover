@@ -25,6 +25,7 @@ var (
 		"fofa":    fofaTestcases{},
 		//"hunter":  hunterTestcases{},
 		"quake": quakeTestcases{},
+		"criminalip": criminalipTestcases{},
 	}
 )
 

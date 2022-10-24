@@ -14,6 +14,7 @@ type Provider struct {
 	Quake   []string `yaml:"quake"`
 	Hunter  []string `yaml:"hunter"`
 	ZoomEye []string `yaml:"zoomeye"`
+	CriminalIP []string `yaml:"criminalip"`
 }
 
 func (provider *Provider) GetKeys() uncover.Keys {
@@ -52,10 +53,13 @@ func (provider *Provider) GetKeys() uncover.Keys {
 	if len(provider.ZoomEye) > 0 {
 		keys.ZoomEyeToken = provider.ZoomEye[rand.Intn(len(provider.ZoomEye))]
 	}
+        if len(provider.CriminalIP) > 0 {
+                keys.CriminalIPToken = provider.CriminalIP[rand.Intn(len(provider.CriminalIP))]
+        }
 
 	return keys
 }
 
 func (provider *Provider) HasKeys() bool {
-	return len(provider.Censys) > 0 || len(provider.Shodan) > 0 || len(provider.Fofa) > 0 || len(provider.Quake) > 0 || len(provider.Hunter) > 0 || len(provider.ZoomEye) > 0
+	return len(provider.Censys) > 0 || len(provider.Shodan) > 0 || len(provider.Fofa) > 0 || len(provider.Quake) > 0 || len(provider.Hunter) > 0 || len(provider.ZoomEye) > 0 || len(provider.CriminalIP) > 0
 }

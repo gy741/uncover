@@ -9,8 +9,9 @@ type Keys struct {
 	QuakeToken   string
 	HunterToken  string
 	ZoomEyeToken string
+	CriminalIPToken string
 }
 
 func (keys Keys) Empty() bool {
-	return keys.CensysSecret == "" && keys.CensysToken == "" && keys.Shodan == "" && keys.FofaEmail == "" && keys.FofaKey == "" && keys.QuakeToken == "" && keys.HunterToken == "" && keys.ZoomEyeToken == ""
+	return keys.CensysSecret == "" && keys.CensysToken == "" && keys.Shodan == "" && keys.FofaEmail == "" && keys.FofaKey == "" && keys.QuakeToken == "" && keys.HunterToken == "" && keys.ZoomEyeToken == "" && keys.CriminalIPToken == ""
 }
