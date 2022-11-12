@@ -91,7 +91,7 @@ func (agent *Agent) query(URL string, session *uncover.Session, criminalipReques
 		results <- uncover.Result{Source: agent.Name(), Error: err}
 		return nil
 	}
-	if criminalipResponse.Code == http.StatusOK && criminalipResponse.Data.Count > 0 {
+	if criminalipResponse.Status == http.StatusOK && criminalipResponse.Data.Count > 0 {
 		for _, criminalipResult := range criminalipResponse.Data.Result {
 			result := uncover.Result{Source: agent.Name()}
 			result.IP = criminalipResult.IP
